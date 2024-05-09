@@ -1,0 +1,21 @@
+<p>Estás en la página de Inicio</p>
+<h1>Lista de Usuarios</h1>
+<table>
+    <tr>
+      <th>Id_Usuario</th>
+      <th>Nombre_Usuario</th>
+      <th>Correo_Usuario</th>
+
+    </tr>
+    @for(elemento of usuarios;track elemento.idUsuario){
+    <tr>
+      <td>{{elemento.idUsuario}}</td>
+      <td>{{elemento.nombre}}</td>
+      <td>{{elemento.correo}}</td>
+
+    </tr>
+    }
+  </table>
+<button class="btn btn-primary" style="margin-right: 10px;" routerLink="alta">
+    Alta de un nuevo usuario</button>
+  <router-outlet></router-outlet>

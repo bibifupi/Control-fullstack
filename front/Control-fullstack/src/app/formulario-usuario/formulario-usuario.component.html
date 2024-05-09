@@ -1,0 +1,17 @@
+<h1>Inicio de sesión</h1>
+<div>
+    <form [formGroup]="formularioUsuario" #frmProducto="ngForm" (ngSubmit)="enviarFormulario()">
+        <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" formControlName="nombre" class="form-control" required placeholder="Introduce un nombre de usuario">
+        </div>
+        <div class="form-group">
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" formControlName="correo" class="form-control" required pattern="^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$" placeholder="Introduce un correo electrónico y formato abc123_@abc123-.com, por ejemplo">
+    
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="frmProducto.invalid">Enviar</button>
+        <button type="button" routerLink="" class="btn btn-primary" style="margin-right: 10px;">Cancelar</button>
+    </form>
+</div>
